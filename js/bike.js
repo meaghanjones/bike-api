@@ -4,7 +4,7 @@ function Bike() {
 
 Bike.prototype.getBikesByLocation = function() {
 
-  $.get('https://bikeindex.org:443/api/v2/bikes_search/stolen?page=1&proximity=' + city + '&proximity_square=100&stolen_after=1438452330').then(function(response) {
+  $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=100&proximity=' + city + '&proximity_square=100').then(function(response) {
     var trekCounter = 0;
     var specializedCounter = 0;
     var konaCounter = 0;
