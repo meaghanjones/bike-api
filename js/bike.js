@@ -2,9 +2,9 @@ function Bike() {
 }
 
 
-Bike.prototype.getBikesByLocation = function() {
+Bike.prototype.getBikesByLocation = function(searchCity) {
 
-  $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=100&proximity=' + city + '&proximity_square=100').then(function(response) {
+  $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=100&proximity=' + searchCity + '&proximity_square=100').then(function(response) {
     var trekCounter = 0;
     var specializedCounter = 0;
     var konaCounter = 0;

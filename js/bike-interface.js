@@ -6,8 +6,8 @@ $(document).ready(function() {
   var currentBikeObject = new Bike();
   $('#bikeCity').click(function(){
     $('#showBikes').text("");
-    city = $('#city').val();
-    var stolenBikes = currentBikeObject.getBikesByLocation(city);
-
-});
+    var city = $('#city').val();
+    // var color = $('#color').val(); placeholder for possible future functionality to search by color.
+    currentBikeObject.getBikesByLocation(city);
+  });
 });
