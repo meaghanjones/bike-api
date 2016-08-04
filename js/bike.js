@@ -65,12 +65,12 @@ Bike.prototype.getBikesByColor = function() {
         }
       })
     });
-  $("#showBikesByColor").append("There were " + blueCounter + " Trek bikes stolen" + "." +"<br>"
-  + "There were " + whiteCounter + " Blue bikes stolen" + ". " + "<br>"
-  + "There were " + blackCounter + " White bikes stolen" + ". " + "<br>"
-  + "There were " + redCounter + " Black bikes stolen" + ". " + "<br>"
-  + "There were " + silverCounter + " Red bikes stolen" + ". " + "<br>"
-  + "There were " + greenCounter + " Silver bikes stolen" + ". " + "<br>"
+  $("#showBikesByColor").append("There were " + blueCounter + '<span class="blue">' + " Blue " + "</span>" + "bikes stolen" + "."  + "<br>"
+  + "There were " + whiteCounter + '<span class="white">' + " White " + '</span>' + "bikes stolen" + ". " + "<br>"
+  + "There were " + blackCounter + " Black bikes stolen" + ". " + "<br>"
+  + "There were " + redCounter + '<span class ="red">' + " Red " + '</span>' + " bikes stolen" + ". " + "<br>"
+  + "There were " + silverCounter + '<span class="silver">' + " Silver " + '</span>' + "bikes stolen" + ". " + "<br>"
+  + "There were " + greenCounter + '<span class="green">' + " Green" + '</span>' + "bikes stolen" + ". " + "<br>"
   + "There were " + otherCounter + " other bikes stolen" + ". ");
 }).fail(function(error){
       $('#showBikesByColor').text(error.responseJSON.message);
