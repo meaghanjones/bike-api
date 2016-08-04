@@ -17,6 +17,11 @@ body {
   text-align: center;
 }
 
+div#search-bike-manufacturer, #search-bike-color, #search-bike-photo {
+  text-align: center;
+  font-size: 18px;
+}
+
 .navbar {
   background: $dolphingrey;
   font-size: 18px;

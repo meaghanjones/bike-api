@@ -78,7 +78,7 @@ Bike.prototype.getBikesByColor = function() {
 };
 
 Bike.prototype.getPhotos = function() {
-  $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=10&proximity=').then(function(response) {
+  $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=100').then(function(response) {
     response.bikes.forEach(function(bike) {
       var photo = bike.thumb;
       if (photo != null) {
