@@ -1,7 +1,6 @@
 function Bike() {
 }
 
-
 Bike.prototype.getBikesByLocation = function(searchCity) {
 
   $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=100&proximity=' + searchCity + '&proximity_square=100').then(function(response) {
@@ -34,6 +33,47 @@ Bike.prototype.getBikesByLocation = function(searchCity) {
   + "There were " + miscCounter + " other bikes stolen" + ". ");
 }).fail(function(error){
       $('#showBikes').text(error.responseJSON.message);
+  });
+};
+
+Bike.prototype.getBikesByColor = function() {
+
+  $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=100&proximity=').then(function(response) {
+    var blueCounter = 0;
+    var whiteCounter = 0;
+    var blackCounter = 0;
+    var redCounter = 0;
+    var silverCounter = 0;
+    var greenCounter = 0;
+    var otherCounter = 0;
+    response.bikes.forEach(function(bike) {
+      bike.frame_colors.forEach(function(frame_color){
+        if (frame_color === "Blue"){
+          blueCounter += 1;
+        } else if (frame_color === "White") {
+          whiteCounter +=1;
+        } else if (frame_color === "Black") {
+          blackCounter +=1;
+        } else if (frame_color === "Red") {
+          redCounter +=1;
+        } else if (frame_color === "Silver") {
+          silverCounter +=1;
+        } else if (frame_color === "Green") {
+          greenCounter +=1;
+        } else {
+          otherCounter +=1;
+        }
+      })
+    });
+  $("#showBikesByColor").append("There were " + blueCounter + " Trek bikes stolen" + "." +"<br>"
+  + "There were " + whiteCounter + " Blue bikes stolen" + ". " + "<br>"
+  + "There were " + blackCounter + " White bikes stolen" + ". " + "<br>"
+  + "There were " + redCounter + " Black bikes stolen" + ". " + "<br>"
+  + "There were " + silverCounter + " Red bikes stolen" + ". " + "<br>"
+  + "There were " + greenCounter + " Silver bikes stolen" + ". " + "<br>"
+  + "There were " + otherCounter + " other bikes stolen" + ". ");
+}).fail(function(error){
+      $('#showBikesByColor').text(error.responseJSON.message);
   });
 };
 
