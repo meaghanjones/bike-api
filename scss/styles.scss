@@ -2,14 +2,14 @@ $darkgreen: #44633F;
 $green: #5CAB7D;
 $desaturatedcyan: #689689;
 $outerspace: #444554;
-
+$dolphingrey: #7E8D85;
 h1 {
   color: $darkgreen;
 }
 
 body {
   background: $green;
-  padding-top: 70px;
+  padding-top:70px;
 }
 
 #jumbtron-color {
@@ -17,6 +17,13 @@ body {
   text-align: center;
 }
 
+.navbar {
+  background: $dolphingrey;
+  font-size: 18px;
+}
+a {
+color: $outerspace;
+}
 // #showBikes {
 //   text-emphasis-style: triangle;
 // }
@@ -58,5 +65,9 @@ div#search-bike-manufacturer {
 }
 
 div#search-bike-color {
+  min-height: 100vh;
+}
+
+div#search-bike-photo {
   min-height: 100vh;
 }

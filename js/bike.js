@@ -63,7 +63,7 @@ Bike.prototype.getBikesByColor = function() {
         } else {
           otherCounter +=1;
         }
-      })
+      });
     });
   $("#showBikesByColor").append("There were " + blueCounter + '<span class="blue">' + " Blue " + "</span>" + "bikes stolen" + "."  + "<br>"
   + "There were " + whiteCounter + '<span class="white">' + " White " + '</span>' + "bikes stolen" + ". " + "<br>"
@@ -72,9 +72,23 @@ Bike.prototype.getBikesByColor = function() {
   + "There were " + silverCounter + '<span class="silver">' + " Silver " + '</span>' + "bikes stolen" + ". " + "<br>"
   + "There were " + greenCounter + '<span class="green">' + " Green" + '</span>' + "bikes stolen" + ". " + "<br>"
   + "There were " + otherCounter + " other bikes stolen" + ". ");
-}).fail(function(error){
+  }).fail(function(error){
       $('#showBikesByColor').text(error.responseJSON.message);
   });
+};
+
+Bike.prototype.getPhotos = function() {
+  $.get('https://bikeindex.org/api/v2/bikes_search/stolen?per_page=10&proximity=').then(function(response) {
+    response.bikes.forEach(function(bike) {
+      var photo = bike.thumb;
+      if (photo != null) {
+        $("#showPhotos").append("<img src=" + photo + ">");
+      }
+    });
+    })
+    .fail(function(error){
+      $('#showPhotos').text(error.responseJSON.message);
+    });
 };
 
 exports.bikeModule = Bike;

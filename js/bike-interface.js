@@ -10,7 +10,10 @@ $(document).ready(function() {
   });
   $('#bikeColor').click(function(){
     $('#showBikesByColor').text("");
-    var color = $('#color').val();
-    currentBikeObject.getBikesByColor(color);
+    currentBikeObject.getBikesByColor();
+  });
+  $('#bikePhoto').click(function(){
+    $('#showPhotos').text("");
+    currentBikeObject.getPhotos();
   });
 });

@@ -14,16 +14,17 @@
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
-        <a href="#search-bike-manufacturer">Stolen Bikes by Manufacturer</a> ||
-        <a href="#search-bike-color">Stolen Bikes by Color</a>
+        <a href="#search-bike-manufacturer-start">Stolen Bikes by Manufacturer</a> ||
+        <a href="#search-bike-color-start">Stolen Bikes by Color</a> ||
+        <a href="#search-bike-photo-start">Stolen Bike Photos</a>
       </div>
     </nav>
     <div class="jumbotron" id="jumbtron-color">
-
       <h1>Stolen Bicycle Statistics</h1>
       <p><i class="fa fa-bicycle" id="bikeIcon" aria-hidden="true"></i></p>
     </div>
     <div class="container">
+      <div id="search-bike-manufacturer-start">&nbsp;<br>&nbsp;</div>
       <div id = "search-bike-manufacturer">
         <h2>How many bikes have been stolen in your area?</h2>
         <label for="city">Enter a city:</label>
@@ -31,10 +32,17 @@
         <button class="btn btn-success" id="bikeCity">Search for Stolen Bikes</button>
         <div id="showBikes"></div>
       </div>
+      <div id="search-bike-color-start">&nbsp;<br>&nbsp;</div>
       <div id="search-bike-color">
         <h2>What is the most common bike color to be stolen this week?</h2>
         <button class="btn btn-success" id="bikeColor">Search for Stolen Bikes</button>
         <div id="showBikesByColor"></div>
+      </div>
+      <div id="search-bike-photo-start">&nbsp;<br>&nbsp;</div>
+      <div id="search-bike-photo">
+        <h2>Photos of the most recent bikes stolen:</h2>
+        <button class="btn btn-success" id="bikePhoto">See Stolen Bikes</button>
+        <div id="showPhotos"></div>
       </div>
     </div>
   </body>
