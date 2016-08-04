@@ -91,4 +91,22 @@ Bike.prototype.getPhotos = function() {
     });
 };
 
+Bike.prototype.totalBikesStolenCity1 = function(city1) {
+  $.get('https://bikeindex.org:443/api/v2/bikes_search/count?proximity=' + city1 + '&stolen_after=1438646400').then(function(response) {
+    var bikeNumberCity1 = response.proximity
+    $("#showCompareCity1").text("In "+ city1  + " there have been " + bikeNumberCity1 + " bikes stolen in the last year.");
+  }).fail(function(error){
+    $('#showCompareCity1').text(error.responseJSON.message);
+  });
+};
+
+Bike.prototype.totalBikesStolenCity2 = function(city2) {
+  $.get('https://bikeindex.org:443/api/v2/bikes_search/count?proximity=' + city2 + '&stolen_after=1438646400').then(function(response) {
+    var bikeNumberCity2 = response.proximity
+    $("#showCompareCity2").text("In "+ city2  + " there have been " + bikeNumberCity2 + " bikes stolen in the last year.");
+  }).fail(function(error){
+    $('#showCompareCity2').text(error.responseJSON.message);
+  });
+};
+
 exports.bikeModule = Bike;

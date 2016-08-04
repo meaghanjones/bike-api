@@ -17,7 +17,7 @@ body {
   text-align: center;
 }
 
-div#search-bike-manufacturer, #search-bike-color, #search-bike-photo {
+div#search-bike-manufacturer, #search-bike-color, #search-bike-photo, #search-compare-cities {
   text-align: center;
   font-size: 18px;
 }
@@ -74,5 +74,9 @@ div#search-bike-color {
 }
 
 div#search-bike-photo {
+  min-height: 100vh;
+}
+
+div#search-compare-cities {
   min-height: 100vh;
 }

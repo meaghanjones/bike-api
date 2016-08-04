@@ -16,7 +16,8 @@
       <div class="container-fluid">
         <a href="#search-bike-manufacturer-start">Stolen Bikes by Manufacturer</a> ||
         <a href="#search-bike-color-start">Stolen Bikes by Color</a> ||
-        <a href="#search-bike-photo-start">Stolen Bike Photos</a>
+        <a href="#search-bike-photo-start">Stolen Bike Photos</a> ||
+        <a href="#search-compare-cities-start">Compare Theft between Cities</a>
       </div>
     </nav>
     <div class="jumbotron" id="jumbtron-color">
@@ -43,6 +44,17 @@
         <h2>Photos of the most recent bikes stolen:</h2>
         <button class="btn btn-success" id="bikePhoto">See Stolen Bikes</button>
         <div id="showPhotos"></div>
+      </div>
+      <div id="search-compare-cities-start">&nbsp;<br>&nbsp;</div>
+      <div id = "search-compare-cities">
+        <h2>Compare how many bikes have been stolen in two cities.</h2>
+        <label for="city1">Enter a first city:</label>
+        <input type="text" id="city1">
+        <label for="city2">Enter a second city:</label>
+        <input type="text" id="city2">
+        <button class="btn btn-success" id="compareCities">Compare Cities</button>
+        <div id="showCompareCity1"></div>
+        <div id="showCompareCity2"></div>
       </div>
     </div>
   </body>
